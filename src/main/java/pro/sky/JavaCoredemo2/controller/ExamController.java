@@ -1,11 +1,8 @@
 package pro.sky.JavaCoredemo2.controller;
 
+import org.springframework.web.bind.annotation.*;
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.services.ExaminerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
@@ -20,7 +17,7 @@ public class ExamController {
     }
 
     @GetMapping
-    public Collection<Question> getQuestions(@RequestParam int amount) {
+    public Collection<Question> getQuestions(@PathVariable int amount) {
         return service.getQuestions(amount);
     }
 }

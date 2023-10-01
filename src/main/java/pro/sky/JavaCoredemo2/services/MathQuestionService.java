@@ -2,7 +2,7 @@ package pro.sky.JavaCoredemo2.services;
 
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.exceptions.NoQuestionsException;
-import pro.sky.JavaCoredemo2.repository.MathQuestionsRepository;
+import pro.sky.JavaCoredemo2.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,15 +11,16 @@ import java.util.Random;
 @Service
 public class MathQuestionService implements QuestionService {
     private final Random random = new Random();
-    private final MathQuestionsRepository repository;
 
-    public MathQuestionService(MathQuestionsRepository repository) {
+    private final QuestionRepository repository;
+
+    public MathQuestionService(QuestionRepository repository) {
         this.repository = repository;
     }
 
     @Override
     public Question add(String question, String answer) {
-        return repository.add(question, answer);
+        return add(new Question(question, answer));
     }
 
     @Override

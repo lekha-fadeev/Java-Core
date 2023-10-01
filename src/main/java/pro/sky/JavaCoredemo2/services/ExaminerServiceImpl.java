@@ -14,10 +14,10 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     private final Random random = new Random();
 
-    private final JavaQuestionService javaQuestionService;
-    private final MathQuestionService mathQuestionService;
+    private final QuestionService javaQuestionService;
+    private final QuestionService mathQuestionService;
 
-    public ExaminerServiceImpl(JavaQuestionService javaQuestionService, MathQuestionService mathQuestionService) {
+    public ExaminerServiceImpl(QuestionService javaQuestionService, QuestionService mathQuestionService) {
         this.javaQuestionService = javaQuestionService;
         this.mathQuestionService = mathQuestionService;
         }

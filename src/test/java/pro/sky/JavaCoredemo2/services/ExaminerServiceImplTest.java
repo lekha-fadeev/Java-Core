@@ -1,6 +1,6 @@
 package pro.sky.JavaCoredemo2.services;
 
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.exceptions.NotEnoughQuestionsException;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class ExaminerServiceImplTest {
 @Mock
-    JavaQuestionService JavaQuestionService;
+    JavaQuestionService javaQuestionService;
 @InjectMocks
     ExaminerServiceImpl service;
 
@@ -44,7 +44,7 @@ class ExaminerServiceImplTest {
     void testGetRandomQuestions() {
         var qa = Set.of(new Question("q1", "a1"), new Question("q2", "a2"),new Question("q3", "a3"));
         when(javaQuestionService.getAll()).thenReturn(qa);
-        when(javaQuestionService.getRandomQuestions())
+        when(javaQuestionService.getRandomQuestion())
                 .thenReturn(new Question("q1", "a1"))
                 .thenReturn(new Question("q2", "a2"))
                 .thenReturn(new Question("q3", "a3"));

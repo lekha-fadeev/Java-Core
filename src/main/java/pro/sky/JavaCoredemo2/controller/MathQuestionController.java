@@ -6,15 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.JavaCoredemo2.services.QuestionService;
 
 import java.util.Collection;
 @RestController
 @RequestMapping("/exam/math")
 public class MathQuestionController {
 
-    private final MathQuestionService service;
+    private final QuestionService service;
 
-    public MathQuestionController(MathQuestionService service) {
+    public MathQuestionController(QuestionService service) {
         this.service = service;
     }
 
