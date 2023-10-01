@@ -1,4 +1,4 @@
-package pro.sky.JavaCoredemo2;
+package pro.sky.JavaCoredemo2.services;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
