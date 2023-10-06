@@ -1,5 +1,6 @@
 package pro.sky.JavaCoredemo2.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.exceptions.NotEnoughQuestionsException;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ public class ExaminerServiceImpl implements ExaminerService {
     private final QuestionService javaQuestionService;
     private final QuestionService mathQuestionService;
 
-    public ExaminerServiceImpl(QuestionService javaQuestionService, QuestionService mathQuestionService) {
+    public ExaminerServiceImpl(@Qualifier("javaQuestionService") QuestionService javaQuestionService, @Qualifier("mathQuestionService") QuestionService mathQuestionService) {
         this.javaQuestionService = javaQuestionService;
         this.mathQuestionService = mathQuestionService;
         }

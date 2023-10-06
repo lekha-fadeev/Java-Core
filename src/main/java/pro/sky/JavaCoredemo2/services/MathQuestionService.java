@@ -1,5 +1,6 @@
 package pro.sky.JavaCoredemo2.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.exceptions.NoQuestionsException;
 import pro.sky.JavaCoredemo2.repository.QuestionRepository;
@@ -14,7 +15,7 @@ public class MathQuestionService implements QuestionService {
 
     private final QuestionRepository repository;
 
-    public MathQuestionService(QuestionRepository repository) {
+    public MathQuestionService( @Qualifier("mathQuestionsRepository") QuestionRepository repository) {
         this.repository = repository;
     }
 

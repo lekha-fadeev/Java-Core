@@ -1,5 +1,6 @@
 package pro.sky.JavaCoredemo2.services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import pro.sky.JavaCoredemo2.entity.Question;
 import pro.sky.JavaCoredemo2.exceptions.NoQuestionsException;
 import pro.sky.JavaCoredemo2.repository.JavaQuestionRepository;
@@ -14,7 +15,7 @@ public class JavaQuestionService implements QuestionService {
     private final Random random = new Random();
     private final QuestionRepository repository;
 
-    public JavaQuestionService(QuestionRepository repository) {
+    public JavaQuestionService( @Qualifier("javaQuestionRepository") QuestionRepository repository) {
         this.repository = repository;
     }
 
